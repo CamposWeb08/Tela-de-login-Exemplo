@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduPortal - Login</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  
+  <div class="pagina">
+    
+    <div class="lado-esquerdo">
+      <div class="icone-decorativo">🎓</div>
+      <h1>Bem-vindo ao EduPortal</h1>
+      <p>
+        Acesse sua conta para continuar seus estudos,
+        acompanhar seu progresso e se conectar com a turma.
+      </p>
+    </div>
+
+  
+    <div class="lado-direito">
+      <div class="caixa-login">
+
+        <h2 class="titulo-login">Fazer login</h2>
+        <p class="subtitulo-login">Digite suas credenciais para acessar</p>
+
+        <div class="mensagem-erro" id="mensagem-erro"></div>
+       
+        <div class="grupo-campo">
+          <label for="campo-login">Login</label>
+          <input
+            id="campo-login"
+            type="text"
+            placeholder="Digite seu login..."
+          />
+        </div>
+
+       
+        <div class="grupo-campo">
+          <label for="campo-senha">Senha</label>
+          <input
+            id="campo-senha"
+            type="password"
+            placeholder="Digite sua senha..."
+          />
+        </div>
+
+        
+        <button class="botao-entrar" onclick="handleEntrar()">
+          ENTRAR
+        </button>
+
+       
+        <a class="link-esqueci" href="#">Esqueci meu login ou senha</a>
+
+      </div>
+    </div>
+
+  </div>
+
+ 
+  <script>
+    function handleEntrar() {
+      
+      var login = document.getElementById("campo-login").value;
+      var senha = document.getElementById("campo-senha").value;
+      var mensagem = document.getElementById("mensagem-erro");
+
+    
+      if (login === "" || senha === "") {
+        mensagem.textContent = "Por favor, preencha todos os campos.";
+        mensagem.style.display = "block";
+        return;
+      }
+
+      
+      mensagem.style.display = "none";
+      alert("Bem-vindo, " + login + "! ✅");
+    }
+  </script>
+
+</body>
+</html>
